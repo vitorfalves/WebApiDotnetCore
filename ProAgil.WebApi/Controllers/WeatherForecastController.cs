@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ProAgil.WebApi.Model;
+using ProAgil.Domain;
 
 namespace ProAgil.WebApi.Controllers
 {
@@ -24,20 +24,20 @@ namespace ProAgil.WebApi.Controllers
         {
             return new Evento []{
                 new Evento(){
-                    EventoId = 1,
+                    Id = 1,
                     Tema = "Angular e dotnet",
                     Local = "BH",
                     QtdPessoas = 250,
-                    DataEvento = DateTime.Now.AddDays(2).ToString("dd/MM/yyyy")
+                    DataEvento = DateTime.Now.AddDays(2)
                 },
                 new Evento(){
-                    EventoId = 2,
+                    Id = 2,
                     Tema = "Angular e EF",
                     Local = "SP",
                     QtdPessoas = 350,
-                    DataEvento = DateTime.Now.AddDays(2).ToString("dd/MM/yyyy")
+                    DataEvento = DateTime.Now.AddDays(2)
                 }
-            }.FirstOrDefault(x => x.EventoId == id);
+            }.FirstOrDefault(x => x.Id == id);
         }
     }
 }
