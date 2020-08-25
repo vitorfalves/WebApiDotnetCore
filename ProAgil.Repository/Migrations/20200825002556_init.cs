@@ -98,7 +98,7 @@ namespace ProAgil.Repository.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(nullable: true),
-                    ImagemURL = table.Column<string>(nullable: true),
+                    URL = table.Column<string>(nullable: true),
                     EventoId = table.Column<int>(nullable: true),
                     PalestranteId = table.Column<int>(nullable: true)
                 },

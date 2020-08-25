@@ -129,14 +129,14 @@ namespace ProAgil.Repository.Migrations
                     b.Property<int?>("EventoId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("ImagemURL")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("PalestranteId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("URL")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -174,7 +174,7 @@ namespace ProAgil.Repository.Migrations
             modelBuilder.Entity("ProAgil.Domain.RedeSocial", b =>
                 {
                     b.HasOne("ProAgil.Domain.Evento", null)
-                        .WithMany("RedeSociais")
+                        .WithMany("RedeSocial")
                         .HasForeignKey("EventoId");
 
                     b.HasOne("ProAgil.Domain.Palestrante", null)
