@@ -35,5 +35,13 @@ constructor(private http: HttpClient) { }
     deleteEvento(id: number){
       return this.http.delete(`${this.baseURL}/${id}`);
     }
+
+    postUpload(file: File, fileName: string){
+      const fileToUpload = <File>file[0];
+      const formData = new FormData();
+      formData.append('file', fileToUpload, fileName);
+
+      return this.http.post(`${this.baseURL}/upload`, formData);
+    }
   
 }
