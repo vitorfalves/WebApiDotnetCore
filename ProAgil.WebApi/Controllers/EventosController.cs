@@ -168,7 +168,7 @@ namespace ProAgil.WebApi.Controllers
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
                     var fullPath = Path.Combine(pathToSave, fileName.Replace("\"", " ").Trim());
 
-                    using(var stream = new FileStream(fullPath, FileMode.Create))
+                    await using(var stream = new FileStream(fullPath, FileMode.Create))
                     {
                         file.CopyTo(stream);
                     }
@@ -180,7 +180,7 @@ namespace ProAgil.WebApi.Controllers
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-            return BadRequest("Erro ao tentar realizar upload");
+            //return BadRequest("Erro ao tentar realizar upload");
         }
     }
 }
