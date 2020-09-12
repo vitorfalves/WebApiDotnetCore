@@ -123,7 +123,7 @@ export class EventosComponent implements OnInit {
         this.getEventos();
         this.toastr.success('Evento criado com sucesso !');
       }, error => {
-      this.toastr.error(`Erro ao criar evento ${error}`);
+      this.toastr.error(`Erro ao criar evento`);
       });
       }else{
         this.evento = Object.assign({id: this.evento.id}, this.registerForm.value);
@@ -152,8 +152,6 @@ export class EventosComponent implements OnInit {
   }
 
   excluirEvento(evento: Evento, template: any) {
-    //template.show();
-    this.toastr.success('Hello world!', 'Toastr fun!');
     this.openModal(template);
     this.evento = evento;
     this.bodyDeletarEvento = `Tem certeza que deseja excluir o Evento: ${evento.tema}, Código: ${evento.id}`;
@@ -166,7 +164,7 @@ export class EventosComponent implements OnInit {
           this.getEventos();
           this.toastr.success('Deletado com sucesso !');
         }, error => {
-          this.toastr.error(`Erro ao tentar deletar ${error}`);
+          this.toastr.error(`Erro ao tentar deletar`);
           console.log(error);
         }
     );
@@ -180,7 +178,7 @@ export class EventosComponent implements OnInit {
         },
         error => { 
           console.log(error); 
-          this.toastr.error(`Erro ao tentar trazer eventos: ${error}`);
+          this.toastr.error(`Erro ao tentar listar eventos`);
         });
   }
 
