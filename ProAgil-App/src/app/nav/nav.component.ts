@@ -37,7 +37,6 @@ export class NavComponent implements OnInit {
   }
 
   userName() {
-    return "Vitor";
-    //return sessionStorage.getItem('username');
+    return sessionStorage.getItem('username');
   }
 }
